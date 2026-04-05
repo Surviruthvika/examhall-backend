@@ -56,7 +56,7 @@ public class SecurityConfig {
     public org.springframework.boot.web.servlet.FilterRegistrationBean<org.springframework.web.filter.CorsFilter> corsFilterRegistrationBean() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(java.util.Arrays.asList(allowedOrigins.split(",")));
+        config.setAllowedOriginPatterns(java.util.Arrays.asList("http://localhost:3000", "https://*.vercel.app"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowedMethods(List.of("*"));
         config.setMaxAge(3600L);
